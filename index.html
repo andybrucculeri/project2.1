@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="keywords" content="andrea, brucculeri, ethnography, berlin, germany">
+  <meta name="description" content="Andrea Brucculeri's ethnograpny about technology in Berlin, Germany.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://raw.githubusercontent.com/jchamill/jquery-quiz/master/src/jquery.quiz.css" />
+  <title>project 2.1</title>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.charts.load('current', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+    // Create the data table.
+    var data = google.visualization.arrayToDataTable([
+        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+         'Western', 'Literature', { role: 'annotation' } ],
+        ['2010', 10, 24, 20, 32, 18, 5, ''],
+        ['2020', 16, 22, 23, 30, 16, 9, ''],
+        ['2030', 28, 19, 29, 30, 12, 13, '']
+      ]);
+
+      var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true
+      };
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+  </script>
+</head>
+<body>
+<div id="pagepiling">
+	<div class="section" id="slide1">
+    <p id="openingtext">
+    "There were cafes selling croissants with apricot jams, mall-like areas glowing with chocolates wrapped in gold foils and “I heart Berlin” refrigerator magnets, and baristas with hair back in long, rope-like braids serving German beers in warm glasses. But there were no power outlets to be found." -- Thoughts from the SFX Airport, Day 1
+  </p>
+  <p id="berlintitle">
+  </p>
+  </div>
+  <div class="section pp-scrollable" id="slide2">
+    <div class="block">
+    <p id="pavementtext">
+      "To put it lightly, cross walks are taken very seriously. It can be an empty road, in the middle of the night, so quiet and so still that one could take a nap in the middle of the street. Yet Germans will not cross the street until they see the red figure turn into a green figure. It is nonnegotiable." -- Thoughts while walking <br /><br /><span class="moretext"> Waiting at cross walks might have been a little bit annoying, but the rule-following ways of the Germans did grow on me. Mostly because you didn't have to think -- you just cross when you're told. <a href="https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=dp_ob_image_bk" target="blank">And isn't that what good user experience is all about?</a> </span>
+    </p>
+        </div>
+      <a href="#"><div id="switch" class="plus"> </div></a>
+        <div id="chart_div"></div>
+  </div>
+	<div class="section">page 3</div>
+	<div class="section">page 4</div>
+	<div class="section">page 5</div>
+</div>
+<script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+</body>
+</html>
