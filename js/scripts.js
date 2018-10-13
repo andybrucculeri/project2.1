@@ -1,4 +1,6 @@
 console.log("js loaded");
+
+// Slides code
 $(document).ready(function() {
 	$('#pagepiling').pagepiling({
 	    menu: null,
@@ -23,6 +25,7 @@ $(document).ready(function() {
         keyboardScrolling: true,
         sectionSelector: '.section',
         animateAnchor: false,
+        sectionsColor: ['#f2f2f2', '#4BBFC3', 'green', 'blue', 'red'],
 
 		//events
 		onLeave: function(index, nextIndex, direction){},
@@ -31,7 +34,7 @@ $(document).ready(function() {
 	});
 });
 
-
+// BERLIN type code
 console.log("scripts loaded");
 $(document).ready(function(){
 var tiny = $('#tiny').tiny().data('api_tiny');
@@ -51,6 +54,8 @@ function typeWriter() {
 
 typeWriter();
 
+//switch code
+
 $(".plus").click(function(){
  $(this).toggleClass("minus");
 })
@@ -58,6 +63,7 @@ $(".plus").click(function(){
 $(".plus").click(function(){
   $(".moretext").css("visibility", "visible");
 })
+
 
 
 /*
@@ -96,6 +102,8 @@ $(document).ready(function(){
 });
 */
 
+//video code
+
 $(".video").mouseenter(function(){
         $('video', this).get(0).play();
         $('.video').toggleClass('hidden');
@@ -106,7 +114,7 @@ $(".video").mouseleave(function(){
 });
 
 
-
+// quiz code 
 $('#quiz').quiz({
   //resultsScreen: '#results-screen',
   //counter: false,

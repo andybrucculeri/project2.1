@@ -35,21 +35,29 @@ p {
   opacity: 1;
 }
 
-#slide2 {
+@supports (grid-area:auto) {
+  .grid1{
+    display: grid;
+    grid-template-columns:300px 300px 300px 300px;
+    grid-template-rows: 300px 300px 300px 300px;
+  }
+
+/* #slide2 {
   background-image: url(../img/blue.jpg);
   background-size:cover;
   background-repeat:no-repeat;
-}
+} */
 
 
 #pavementtext {
+  grid-column: 1/3;
+  grid-row: 1/2;
   position: absolute;
   font-size: 18px;
   color: #191970;
   max-width: 60em;
   top: 3%;
   left: 7%;
-  z-index: 2;
   opacity: 1;
   margin-right: 10%;
   display: block;
@@ -63,29 +71,31 @@ float:left;
 
 
 .plus{
+  background-image: url("../img/redman.png");
   width: 100px;
   height: 100px;
-  background-image: url("../img/redman.png");
   background-size: contain;
   background-repeat:no-repeat;
-  position:relative;
-  display:block;
-float:left;
-  margin-left: 10%;
-  margin-bottom: 10em;
 
+}
+
+div.plus {
+  grid-column: 2/3;
+  grid-row: 2/2;
+}
+
+div.plus.minus {
+  grid-column: 2/3;
+  grid-row: 2/2;
+      display:block;
 }
 
 .plus.minus{
   background-image: url("../img/greenman.png");
   width: 100px;
   height: 100px;
+  background-size: contain;
   background-repeat:no-repeat;
-float:left;
-  margin-left: 10%;
-  margin-bottom: 10em;
-    display:block;
-
 }
 
 
@@ -95,17 +105,13 @@ float:left;
   visibility: hidden;
 }
 
-@media screen and (max-width: 600px) {
-    div#chart_div {
-        zoom:0.6;
-    }
-}
+
 
 #chart_div {
-  width:inherit;
-  height:inherit;
   display:block;
   margin-top: 10em;
   margin-bottom: 2em;
-float:inherit;
+float:left;
+grid-column: 2/3;
+grid-row: 2/2;
 }
