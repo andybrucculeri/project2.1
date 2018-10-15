@@ -1,5 +1,6 @@
 console.log("js loaded");
 
+
 // Slides code
 $(document).ready(function() {
 	$('#pagepiling').pagepiling({
@@ -17,7 +18,7 @@ $(document).ready(function() {
             'textColor': '#000',
             'bulletsColor': '#000',
             'position': 'right',
-            'tooltips': ['section1', 'section2', 'section3', 'section4']
+            'tooltips': ['Home', 'Introduction', 'Walking', 'Trains', 'Internet', 'Quiz','Sources']
         },
        	normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
@@ -25,7 +26,7 @@ $(document).ready(function() {
         keyboardScrolling: true,
         sectionSelector: '.section',
         animateAnchor: false,
-        sectionsColor: ['#f2f2f2', '#4BBFC3', 'green', 'blue', 'red'],
+        sectionsColor: ['#f2f2f2', '#4BBFC3', '#B0FFB6', '#FFAF28', '#f8f8ff', '#FAEBD7', '#F2A39F'],
 
 		//events
 		onLeave: function(index, nextIndex, direction){},
@@ -35,10 +36,6 @@ $(document).ready(function() {
 });
 
 // BERLIN type code
-console.log("scripts loaded");
-$(document).ready(function(){
-var tiny = $('#tiny').tiny().data('api_tiny');
-});
 
 var i = 0;
 var txt = 'BERLIN';
@@ -54,7 +51,7 @@ function typeWriter() {
 
 typeWriter();
 
-//switch code
+//red and green figures code
 
 $(".plus").click(function(){
  $(this).toggleClass("minus");
@@ -66,43 +63,46 @@ $(".plus").click(function(){
 
 
 
-/*
 $(function($) {
     setInterval(function() {
     if($('.plus.minus').is(':visible'))
-        $('.plus').hide();
+        $('.plus').fadeOut();
     }, 7000);
 });
 
+// chart code
 
+window.onload = function () {
 
-
-
-var figure = $(".video").hover( hoverVideo, hideVideo );
-
-function hoverVideo(e) {
-    $('video', this).get(0).play();
-}
-
-function hideVideo(e) {
-    $('video', this).get(0).pause();
-}
-
-
-$(document).ready(function(){
-    $(".video").mouseenter(function(){
-            $('video', this).get(0).play();
-            $(".video").css("visibility", "visible");
-    });
-    $(".video").mouseleave(function(){
-        $(".video").css("visibility", "hidden");
-          $('video', this).get(0).pause();
-    });
-
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "Approximate Money Citizens Are Willing To Spend To Protect Their Data"
+	},
+	axisY: {
+		title: "Money (in USD)",
+		suffix: "$",
+		includeZero: false
+	},
+	axisX: {
+		title: "Countries"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "\"$\"#,##0.0#",
+		dataPoints: [
+			{ label: "USA", y: 220 },
+			{ label: "China", y: 30 },
+			{ label: "India", y: 25 },
+			{ label: "Great Britain", y: 260 },
+			{ label: "Germany", y: 530 }
+		]
+	}]
 });
-*/
+chart.render();
 
-//video code
+}
 
 $(".video").mouseenter(function(){
         $('video', this).get(0).play();
@@ -114,7 +114,7 @@ $(".video").mouseleave(function(){
 });
 
 
-// quiz code 
+// quiz code
 $('#quiz').quiz({
   //resultsScreen: '#results-screen',
   //counter: false,
@@ -122,46 +122,64 @@ $('#quiz').quiz({
   counterFormat: 'Question %current of %total',
   questions: [
     {
-      'q': 'Is jQuery required for this plugin?',
+      'q': 'What year did Tempelhof go from an airport to a park?',
       'options': [
-        'Yes',
-        'No'
+        '2008',
+        '1997',
+        '1989',
+        '1973'
       ],
       'correctIndex': 0,
-      'correctResponse': 'Good job, that was obvious.',
-      'incorrectResponse': 'Well, if you don\'t include it, your quiz won\'t work'
+      'correctResponse': 'Good job, you are a great guesser! Tempelhof Park is not only the largest park in Berlin, but it happened to be the park right near my office and apartment. It made a great place for me to throw my Fourth of July party!',
+      'incorrectResponse': 'I told you this was going to be difficult. Tempelhof airport was made into a park in 2008. It is not only the largest park in Berlin, but it happened to be the park right near my office and appartment. It made a great place for me to throw my Fourth of July patry!'
     },
     {
-      'q': 'How do you use it?',
+      'q': 'Which of these Berlin nightclubs is the most famous, and sometimes called the word\'s capital of techno?',
       'options': [
-        'Include jQuery, that\'s it!',
-        'Include jQuery and the plugin javascript.',
-        'Include jQuery, the plugin javascript, the optional plugin css, required markup, and the javascript configuration.'
+        'Watergate',
+        'Birgit & Bier',
+        'Berghain',
+        'Astra Kulturhaus'
       ],
       'correctIndex': 2,
-      'correctResponse': 'Correct! Sounds more complicated than it really is.',
-      'incorrectResponse': 'Come on, it\'s not that easy!'
+      'correctResponse': 'Correct! Berghain is a nightclub with many different rooms and a capacity of about 1,500. This club often features the hottest DJs in the area and has several dark rooms set asside for openly sexual activity. Also -- no phones or cameras allowed.',
+      'incorrectResponse': 'Clearly you are not from Berlin, as EVERYONE in the city knows Berghain is the most famous club! Berghain is a nightclub with many different rooms and a capacity of about 1,500. This club often features the hottest DJs in the area and has several dark rooms set aside for openly sexual activity. Also -- no phones or cameras allowed.'
     },
     {
-      'q': 'The plugin can be configured to require a perfect score.',
+      'q': 'Which of the following is illegal in Berlin?',
       'options': [
-        'True',
-        'False'
+        'Buying and selling Nazi paraphernalia',
+        'Drinking a beer at 16 years old',
+        'Smoking medical marijuana',
+        'Driving a car at 16.5 years old (if there is a teacher in the car)'
       ],
       'correctIndex': 0,
-      'correctResponse': 'You\'re a genius! You just set allowIncorrect to true.',
-      'incorrectResponse': 'Why you have no faith!? Just set allowIncorrect to true.'
+      'correctResponse': 'Yup, sorry history buffs! Turns out Germany isn\'t too fond of remembering World War II.',
+      'incorrectResponse': 'Nope. While Germans can drink beer 5 years earlier than Americans, they cannot buy any Nazi paraphernalia. '
     },
     {
-      'q': 'How do you specify the questions and answers?',
+      'q': 'Why can it be so difficult to find Germans online?',
       'options': [
-        'MySQL database',
-        'In the HTML',
-        'In the javascript configuration'
+        'Many Germans avoid having pictures of themselves posted on social media',
+        'It is popular to use fake names online to gain privacy',
+        'People are paranoied that their online activiteis are being watched by the government',
+        'All of these'
+      ],
+      'correctIndex': 3,
+      'correctResponse': 'Correct! Should you ever manage to make a German friend in Berlin, make sure not to post any pictures of them on your social media without their permission.',
+      'incorrectResponse': 'Wrong! All of these are reasosns you may find it difficult to find a German online. Should you ever manage to make a German friend in Berlin, make sure not to post any pictures of them on your social media without their permission.'
+    },
+    {
+      'q': 'What is Berln\'s Homeless Veggie Dinner?',
+      'options': [
+        'A vegetable soup kitchen attached to a homeless shelter.',
+        'A popular vegetarian restaurant that donates extra food to homeless shelters.',
+        'An event in which volunteers gather donated ingredients from restaurants in order to cook and give away nutritious vegan food for free.',
+        'A nonprofit organization with a focus on delivering vegetable-based meals to low-income families and homeless people.'
       ],
       'correctIndex': 2,
-      'correctResponse': 'Correct! Refer to the documentation for the structure.',
-      'incorrectResponse': 'Wrong! Do it in the javascript configuration. You might need to read the documentation.'
+      'correctResponse': 'Correct! I attended one of the events while I was in Berlin, and the food was so good that it was one of my favorite meals all summer.',
+      'incorrectResponse': 'Nope. But aren\'t you glad this quiz is over?'
     }
   ]
 });

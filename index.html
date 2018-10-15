@@ -5,82 +5,147 @@
   <meta name="description" content="Andrea Brucculeri's ethnograpny about technology in Berlin, Germany.">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+    <!-- My CSS -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- slider CSS -->
   <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="https://raw.githubusercontent.com/jchamill/jquery-quiz/master/src/jquery.quiz.css" />
-  <title>project 2.1</title>
-  <!--Load the AJAX API-->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-
-    // Load the Visualization API and the piechart package.
-    google.charts.load('current', {'packages':['corechart']});
-
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
-
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
-    function drawChart() {
-
-    // Create the data table.
-    var data = google.visualization.arrayToDataTable([
-        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
-         'Western', 'Literature', { role: 'annotation' } ],
-        ['2010', 10, 24, 20, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-        ['2030', 28, 19, 29, 30, 12, 13, '']
-      ]);
-
-      var options = {
-        width: 300,
-        height: 200,
-        legend: { position: 'top', maxLines: 3 },
-        bar: { groupWidth: '75%' },
-        isStacked: true
-      };
-    // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-    $(window).resize(function(){
-      drawChart1();
+  <!-- quiz link -->
+  <link href="https://raw.githubusercontent.com/jchamill/jquery-quiz/master/src/jquery.quiz.css" />
+    <!-- jquery link -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- flip tile jquery function plugin -->
+  <script>
+  $(function(){
+    $(".flip").flip({
+      trigger: 'hover'
     });
-  }
-  </script>
+  });
+</script>
+<title>project 2.1</title>
 </head>
 <body>
-<div id="pagepiling">
-	<div class="section" id="slide1">
-    <p id="openingtext">
-    "There were cafes selling croissants with apricot jams, mall-like areas glowing with chocolates wrapped in gold foils and “I heart Berlin” refrigerator magnets, and baristas with hair back in long, rope-like braids serving German beers in warm glasses. But there were no power outlets to be found." -- Thoughts from the SFX Airport, Day 1
-  </p>
-  <p id="berlintitle">
-  </p>
-  </div>
-  <div class="section pp-scrollable" id="slide2">
-    <div class="grid1">
-    <div class="block grid1">
-    <p id="pavementtext">
-      "To put it lightly, cross walks are taken very seriously. It can be an empty road, in the middle of the night, so quiet and so still that one could take a nap in the middle of the street. Yet Germans will not cross the street until they see the red figure turn into a green figure. It is nonnegotiable." -- Thoughts while walking <br /><br /><span class="moretext"> Waiting at cross walks might have been a little bit annoying, but the rule-following ways of the Germans did grow on me. Mostly because you didn't have to think -- you just cross when you're told. <a href="https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=dp_ob_image_bk" target="blank">And isn't that what good user experience is all about?</a> </span>
-    </p>
+  <div id="pagepiling">
+      <!-- homepage slide-->
+    <div class="section" id="slide1">
+      <p id="openingtext">
+        "There were cafes selling croissants with apricot jams, mall-like areas glowing with chocolates wrapped in gold foils and “I heart Berlin” refrigerator magnets, and baristas with hair back in long, rope-like braids serving German beers in warm glasses. But there were no power outlets to be found." -- Thoughts from the SFX Airport, Day 1
+      </p>
+      <p id="berlintitle">
+      </p>
+    </div>
+      <!-- Introduction slide -->
+    <div class="section">
+      <p id="introduction">
+        Welcome to my ethnography (of sorts) on behavior and technology in Berlin! Together we will glance at the 82.29 million Germans, their 79.12 million Internet users (that's 96.2% of the population!), 31 million Facebook subscribers, and 100 million mobile phones as well as crosswalks, fake names, friends, and other details. In order to get the full experience of this website, you might have to explore a bit (I know, it's terrifying, but I had to do that for 9 weeks in Berlin when I didn't speak a word of German, so really you're getting off easy here.) If you're looking to cut to the chase (a meandering narrative of <a target="blank" href="https://www.instagram.com/greenletters596/">yours truly over seas</a>) then <a href = "doc/BerlinEthnography.pdf" download> click here </a> to download my full ethnography.
+      </p>
+        <!-- flipping pictures -->
+      <div class="flip pic1">
+        <div class="front">
         </div>
-      <a href="#"><div id="switch" class="plus"> </div></a>
-        <div id="chart_div"></div>
+        <div class="back">
+          <img src="img/dancing.png" alt="A picture of me dnacing next to a painted portion of the Berlin Wall." />
+        </div>
       </div>
+      <div class="flip pic2">
+        <div class="front">
+        </div>
+        <div class="back">
+          <img src="img/friends.jpg" alt="A picture of me with my Berlin friends at my Fourth of July Party" />
+        </div>
+      </div>
+    </div>
+      <!--walking slide -->
+    <div class="section pp-scrollable" id="slide2">
+      <div class="grid1">
+        <div class="block grid1">
+          <p id="pavementtext">
+            "To put it lightly, crosswalks are taken very seriously. It can be an empty road, in the middle of the night, so quiet and so still that one could take a nap in the middle of the street. Yet Germans will not cross the street until they see the red figure turn into a green figure. It is nonnegotiable." -- Thoughts while walking. <br /><br /> In the United States, crossing the street is signaled by three different things: a green light, a flashing red light, and a red light. The flashing red allows for an area of uncertainty, meaning pedestrians will have to think about whether or not it is safe to start crossing the street. <br /><br /> <span class="moretext">  In Germany, there are only two lights: green and red. There is no area of uncertainty. As result, pedestrian injury rates in the United States are about twice as high as they are in Germany, and cyclist injury rates are about 6 times higher in the United States. <br /> <br/> Waiting at crosswalks in Germany might have been a little bit annoying, but the rule-following ways of the Germans did grow on me. Mostly because you didn't have to think -- you just cross when you're told. <a href="https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=dp_ob_image_bk" target="blank"> And isn't that what good user experience is all about? </a> <br /><br />   </span>
+          </p>
+        </div>
+          <!-- red and green walking figures-->
+        <a href="#"><div id="switch" class="plus"> </div></a>
+      </div>
+    </div>
+      <!--Trains slide -->
+    <div class="section pp-scrollable">
+      <p id="trains">
+        "It felt like I couldn’t be more than a 15-minute walk from a train station if I tried. Trains came very frequently, even late at night, and buying tickets took less than a minute. It was brilliant. And liberating." -- Thoughts from underground.<br /> <br/> Trains in Germany transport about 2.6 billion passengers per year, and in 2017, German public transport carried over 5.8 billion passengers. For comparison, Americans took 10.1 billion public transportation trips in 2017, and the United States is 28 times bigger than Germany. <br /> <br/> Although some train stations in Berlin had free WiFi, the space between train stations did not. There was virtually no cell service underground, which meant phones couldn't offer much entertainment for passengers. Germans aren't the chatty type, so for all the time they spent riding trains, they usually spent listening to music through headphones, napping, or staring into space.<br /> <br/> I don't blame them. Trains were noisy in a muted way, and sometimes uncomfortably warm. It was a good time to be alone with your thoughts. In this way, I took a liking to the German sense of personal space and privacy in public spaces.
+      </p>
+      <div>
+          <!-- hidden video  -->
+        <div class="front">
+          <span id="quick">With quick easy trains, you can do a lot of things in just one day.</span>
+        </div>
+        <div class="back">
+          <div id="videosList">
+            <div class="video hidden">
+              <video class="thevideo" loop preload="none"
+              name="Video Name" src="vid/new.mov"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- internet slide -->
+    <div class="section pp-scrollable web1">
+      <p id="internet">
+        "The paranoia of German citizens was more interesting to me than the actual German Internet laws. Legally speaking, Germany’s internet is just as “free” as the United States." -- Thoughts from a big-windowed cafe.<br /> <br/> Germans are big fans privacy and security. It's not uncommon for people to use fake names on their social media platforms to make themselves "unsearchable." There is also a general concern about internet activity being monitored, and for good reason. It's common for people to receive fines in the mail for pirating movies or streaming any kind of illegal content. There are even legal services to help protect against these fines.<br /> <br/> While Germany and the United States have many similar laws regarding the internet, it seems Germany is much more active in enforcing laws. Germans seem to find the internet to be a much scarier place in general. They spend significantly more money than other countries on data protection and things such as spam-blockers and firewalls.
+      </p>
+        <!-- the chart -->
+      <div id="chartContainer" style="height: 350px; width: 100%;"></div>
+  <!-- dummy search bar -->
+      <div id="wrap" class="size">
+        <form action="" autocomplete="on">
+          <input id="search" name="search" type="text" placeholder="You're being watched. "><input id="search_submit" value="Rechercher" type="submit">
+        </form>
+      </div>
+
+    </div>
+      <!-- quiz page -->
+    <div class="section pp-scrollable">
+        <!-- quiz -->
+      <div id="quiz">
+        <div id="quiz-header">
+          <h1>How Much Do You Know About Berlin?</h1>
+          <p class="faded">Don't worry, this will be very difficult.</p>
+        </div>
+        <div id="quiz-start-screen">
+          <p><a href="#" id="quiz-start-btn" class="quiz-button">Start</a></p>
+        </div>
+      </div>
+    </div>
+      <!-- soures page -->
+    <div class="section pp-scrollable">
+      <p id="credits">
+        <span class="call">Can't get enough of Berlin? <a href = "doc/BerlinEthnography.pdf" download> Download my full ethnography here! </a> </span><br /> <br/>
+        Sources:<br /> <br/>
+        https://www.apta.com/mediacenter/ptbenefits/Pages/FactSheet.aspx <br /> <br/>
+        https://www.destatis.de/EN/FactsFigures/SocietyState/IncomeConsumptionLivingConditions/UseInformationTechnologies/UseInformationTechnologies.html
+        https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5227927/<br /> <br/>
+        https://www.internetworldstats.com/eu/de.htm<br /> <br/>
+        https://hbr.org/2015/05/customer-data-designing-for-transparency-and-trust<br /> <br/>
+        https://www.videoblocks.com/video/berlin-skyline-timelapse-at-sunset-day-to-night-panning-0atf41z
+      </p>
+    </div>
   </div>
-	<div class="section">page 3</div>
-	<div class="section">page 4</div>
-	<div class="section">page 5</div>
-</div>
-<script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+    <!-- jquery-->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://jchamill.github.io/jquery-quiz/jquery.quiz-min.js"> </script>
+    <!-- my JS -->
   <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- more plug ins-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+    <!-- slider js -->
+  <script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+    <!-- flip card plug in js -->
+  <script src="js/jquery.flip.min.js.map"></script>
+  <script type="text/javascript" src="js/jquery.flip.js"></script>
+    <!-- canvas-->
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
